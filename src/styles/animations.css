@@ -1,0 +1,275 @@
+/* 춤추는 고양이 컨테이너 */
+.dancing-cat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* 고양이 래퍼 */
+.cat-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  transition: all 0.3s ease;
+}
+
+/* 고양이 이미지 */
+.cat-image {
+  width: 200px;
+  height: 200px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  cursor: pointer;
+}
+
+.cat-image:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+}
+
+/* 춤추는 애니메이션 */
+.cat-wrapper.dancing {
+  animation: catDance 2s ease-in-out infinite;
+}
+
+.cat-wrapper.dancing .cat-image {
+  animation:
+    catBounce 0.6s ease-in-out infinite,
+    catRotate 3s linear infinite,
+    catWiggle 1s ease-in-out infinite alternate;
+}
+
+/* 메인 댄스 애니메이션 - 위아래 움직임과 좌우 흔들기 */
+@keyframes catDance {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  25% {
+    transform: translateY(-20px) scale(1.1) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-30px) scale(1.15) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 바운스 애니메이션 */
+@keyframes catBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* 회전 애니메이션 */
+@keyframes catRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* 좌우 흔들기 애니메이션 */
+@keyframes catWiggle {
+  0% {
+    transform: rotate(-10deg) scale(0.95);
+  }
+  100% {
+    transform: rotate(10deg) scale(1.05);
+  }
+}
+
+/* 버튼 스타일링 */
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.dance-button {
+  background: linear-gradient(45deg, #ff6b6b, #ffa500);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(255, 107, 107, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.dance-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(255, 107, 107, 0.4);
+}
+
+.dance-button:active {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 6px 12px rgba(255, 107, 107, 0.4);
+}
+
+/* 버튼 클릭 효과 */
+.dance-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.dance-button:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* 설명 텍스트 */
+.description {
+  text-align: center;
+  color: #fff;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.description p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* 반응형 디자인 - 큰 화면 */
+@media (min-width: 1200px) {
+  .cat-wrapper {
+    width: 400px;
+    height: 400px;
+  }
+
+  .cat-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .dance-button {
+    padding: 18px 35px;
+    font-size: 1.3rem;
+  }
+}
+
+/* 반응형 디자인 - 중간 화면 */
+@media (max-width: 768px) {
+  .dancing-cat-container {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .cat-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+
+  .cat-image {
+    width: 160px;
+    height: 160px;
+  }
+
+  .dance-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+
+/* 반응형 디자인 - 작은 화면 */
+@media (max-width: 480px) {
+  .cat-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .cat-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .dance-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* 애니메이션 강도 조정 (모바일에서 성능 고려) */
+  @keyframes catDance {
+    0% {
+      transform: translateY(0) scale(1);
+    }
+    50% {
+      transform: translateY(-15px) scale(1.05);
+    }
+    100% {
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes catBounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+/* 접근성 - 애니메이션 비활성화 설정 */
+@media (prefers-reduced-motion: reduce) {
+  .cat-wrapper.dancing,
+  .cat-wrapper.dancing .cat-image {
+    animation: none;
+  }
+
+  .cat-wrapper.dancing {
+    transform: scale(1.1);
+  }
+
+  .dance-button:hover {
+    transform: none;
+    box-shadow: 0 8px 16px rgba(255, 107, 107, 0.4);
+  }
+}
+
+/* GPU 가속을 위한 최적화 */
+.cat-wrapper,
+.cat-image,
+.dance-button {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* 부드러운 애니메이션을 위한 하드웨어 가속 */
+.cat-wrapper.dancing .cat-image {
+  transform: translateZ(0);
+}

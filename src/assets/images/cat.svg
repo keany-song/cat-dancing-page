@@ -1,0 +1,56 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 고양이 몸체 -->
+  <ellipse cx="100" cy="140" rx="45" ry="35" fill="#ff8c42" stroke="#e6743a" stroke-width="2"/>
+
+  <!-- 고양이 머리 -->
+  <circle cx="100" cy="80" r="40" fill="#ff8c42" stroke="#e6743a" stroke-width="2"/>
+
+  <!-- 고양이 귀 -->
+  <polygon points="75,50 85,25 95,50" fill="#ff8c42" stroke="#e6743a" stroke-width="2"/>
+  <polygon points="105,50 115,25 125,50" fill="#ff8c42" stroke="#e6743a" stroke-width="2"/>
+
+  <!-- 귀 안쪽 -->
+  <polygon points="78,47 85,32 92,47" fill="#ffb570"/>
+  <polygon points="108,47 115,32 122,47" fill="#ffb570"/>
+
+  <!-- 고양이 눈 -->
+  <ellipse cx="88" cy="75" rx="8" ry="12" fill="#2c3e50"/>
+  <ellipse cx="112" cy="75" rx="8" ry="12" fill="#2c3e50"/>
+
+  <!-- 눈 하이라이트 -->
+  <ellipse cx="90" cy="72" rx="3" ry="4" fill="#fff"/>
+  <ellipse cx="114" cy="72" rx="3" ry="4" fill="#fff"/>
+
+  <!-- 고양이 코 -->
+  <polygon points="100,85 95,92 105,92" fill="#e74c3c"/>
+
+  <!-- 고양이 입 -->
+  <path d="M 100 95 Q 90 102 85 105" stroke="#2c3e50" stroke-width="2" fill="none"/>
+  <path d="M 100 95 Q 110 102 115 105" stroke="#2c3e50" stroke-width="2" fill="none"/>
+
+  <!-- 고양이 수염 -->
+  <line x1="60" y1="80" x2="75" y2="82" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="60" y1="88" x2="75" y2="88" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="60" y1="96" x2="75" y2="94" stroke="#2c3e50" stroke-width="2"/>
+
+  <line x1="125" y1="82" x2="140" y2="80" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="125" y1="88" x2="140" y2="88" stroke="#2c3e50" stroke-width="2"/>
+  <line x1="125" y1="94" x2="140" y2="96" stroke="#2c3e50" stroke-width="2"/>
+
+  <!-- 고양이 다리 -->
+  <ellipse cx="75" cy="165" rx="12" ry="18" fill="#ff8c42" stroke="#e6743a" stroke-width="2"/>
+  <ellipse cx="100" cy="168" rx="12" ry="18" fill="#ff8c42" stroke="#e6743a" stroke-width="2"/>
+  <ellipse cx="125" cy="165" rx="12" ry="18" fill="#ff8c42" stroke="#e6743a" stroke-width="2"/>
+
+  <!-- 고양이 꼬리 -->
+  <path d="M 145 135 Q 160 125 170 110 Q 175 95 165 85" stroke="#e6743a" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <path d="M 145 135 Q 160 125 170 110 Q 175 95 165 85" stroke="#ff8c42" stroke-width="6" fill="none" stroke-linecap="round"/>
+
+  <!-- 고양이 발가락 -->
+  <circle cx="70" cy="178" r="4" fill="#e6743a"/>
+  <circle cx="80" cy="178" r="4" fill="#e6743a"/>
+  <circle cx="95" cy="181" r="4" fill="#e6743a"/>
+  <circle cx="105" cy="181" r="4" fill="#e6743a"/>
+  <circle cx="120" cy="178" r="4" fill="#e6743a"/>
+  <circle cx="130" cy="178" r="4" fill="#e6743a"/>
+</svg>
